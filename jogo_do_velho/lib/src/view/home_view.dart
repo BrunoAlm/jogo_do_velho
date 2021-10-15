@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jogo_do_velho/src/widgets/botao_jogador.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -22,73 +23,23 @@ class Home extends StatelessWidget {
           color: Colors.indigo,
           height: altura,
           width: largura,
-          child: largura > 600
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TextButton(
-                      onPressed: () => Navigator.of(context).pushNamed('/jogo'),
-                      style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(1),
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(50)),
-                      ),
-                      child: const Icon(
-                        Icons.close,
-                        size: 45,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(width: 30),
-                    TextButton(
-                      style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(1),
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(50)),
-                      ),
-                      onPressed: () => Navigator.of(context).pushNamed('/jogo'),
-                      child: const Icon(
-                        Icons.circle_outlined,
-                        size: 45,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                )
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TextButton(
-                      onPressed: () => Navigator.of(context).pushNamed('/jogo'),
-                      style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(1),
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(50)),
-                      ),
-                      child: const Icon(
-                        Icons.close,
-                        size: 45,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                    TextButton(
-                      style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(1),
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(50)),
-                      ),
-                      onPressed: () => Navigator.of(context).pushNamed('/jogo'),
-                      child: const Icon(
-                        Icons.circle_outlined,
-                        size: 45,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
+          child: Center(
+            child: largura > 600
+                ? Row(
+                    children: const [
+                      BotaoJogadorX(),
+                      SizedBox(width: 30),
+                      BotaoJogadorO()
+                    ],
+                  )
+                : Column(
+                    children: const [
+                      BotaoJogadorX(),
+                      SizedBox(height: 30),
+                      BotaoJogadorO()
+                    ],
+                  ),
+          ),
         ),
       ),
     );
