@@ -26,6 +26,7 @@ class Home extends StatelessWidget {
           child: Center(
             child: largura > 600
                 ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       BotaoJogadorX(),
                       SizedBox(width: 30),
@@ -33,6 +34,7 @@ class Home extends StatelessWidget {
                     ],
                   )
                 : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       BotaoJogadorX(),
                       SizedBox(height: 30),
