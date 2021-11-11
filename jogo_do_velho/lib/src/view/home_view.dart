@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
           'Escolha seu jogador:',
           style: TextStyle(color: Colors.white),
         ),
-        elevation: 0,
+        elevation: 3,
       ),
       body: SafeArea(
         child: Container(
