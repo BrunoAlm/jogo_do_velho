@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'view/home_view.dart';
 import 'view/jogo_view.dart';
 

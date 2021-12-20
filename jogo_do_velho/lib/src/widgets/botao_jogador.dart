@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jogo_do_velho/src/model/player_model.dart';
+import 'package:jogo_do_velho/src/controller/player_controller.dart';
+import 'package:flutter/foundation.dart';
 
 class BotaoJogadorX extends StatefulWidget {
   const BotaoJogadorX({Key? key}) : super(key: key);
@@ -9,12 +10,15 @@ class BotaoJogadorX extends StatefulWidget {
 }
 
 class _BotaoJogadorXState extends State<BotaoJogadorX> {
-  var jogador = PlayerModel();
+  final PlayerController controller = PlayerController();
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        jogador.jogar(123123);
+        controller.addListener(() {
+          controller.jogador('X');
+        });
         Navigator.of(context).pushNamed('/jogo');
       },
       style: ButtonStyle(
@@ -31,7 +35,9 @@ class _BotaoJogadorXState extends State<BotaoJogadorX> {
 }
 
 class BotaoJogadorO extends StatelessWidget {
-  const BotaoJogadorO({Key? key}) : super(key: key);
+  final PlayerController controller = PlayerController();
+
+  BotaoJogadorO({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +47,9 @@ class BotaoJogadorO extends StatelessWidget {
         padding: MaterialStateProperty.all(const EdgeInsets.all(50)),
       ),
       onPressed: () {
-         
+        controller.addListener(() {
+          controller.jogador('X');
+        });
         Navigator.of(context).pushNamed('/jogo');
       },
       child: const Padding(

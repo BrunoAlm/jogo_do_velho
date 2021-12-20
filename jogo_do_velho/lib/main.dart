@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
-import 'package:jogo_do_velho/src/model/player_model.dart';
+import 'package:flutter/material.dart';
+import 'package:jogo_do_velho/src/controller/player_controller.dart';
 import 'package:provider/provider.dart';
-
 import 'src/meu_app.dart';
 
-main(List<String> args) {
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => PlayerModel(),
-      child: const MeuApp(),
-    ),
-  );
-}
+main() => runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => PlayerController()),
+          // Provider(create: (context) => SomeOtherClass()),
+        ],
+        child: const MeuApp(),
+      ),
+    );

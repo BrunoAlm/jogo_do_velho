@@ -27,17 +27,17 @@ class Home extends StatelessWidget {
             child: largura > 600
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      BotaoJogadorX(),
-                      SizedBox(width: 30),
+                    children: [
+                      const BotaoJogadorX(),
+                      const SizedBox(width: 30),
                       BotaoJogadorO()
                     ],
                   )
                 : Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      BotaoJogadorX(),
-                      SizedBox(height: 30),
+                    children: [
+                      const BotaoJogadorX(),
+                      const SizedBox(height: 30),
                       BotaoJogadorO()
                     ],
                   ),
